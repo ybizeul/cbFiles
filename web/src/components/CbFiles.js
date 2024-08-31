@@ -28,7 +28,7 @@ export function CbFiles({ fileInfo, viewMode, loadFiles, searchTerms }) {
 
         if (viewMode === "gallery") {
             const newComponents = filteredfileInfo.map((item) => (
-                <CbFileGallery fileName={item} loadFiles={loadFiles} />
+                <CbFileGallery key={item} fileName={item} loadFiles={loadFiles} />
             ));
 
             setComponents(
@@ -38,7 +38,7 @@ export function CbFiles({ fileInfo, viewMode, loadFiles, searchTerms }) {
             );
         } else if (viewMode === "list") {
             const newComponents = filteredfileInfo.map((item) => (
-                <CbFileList fileName={item} loadFiles={loadFiles} />
+                <CbFileList key={item} fileName={item} loadFiles={loadFiles} />
             ));
             setComponents(
                 <div className="pt-2">
